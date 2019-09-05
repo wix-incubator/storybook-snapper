@@ -15,16 +15,25 @@
     "registry": "http://npm.dev.wixpress.com/"
   },
   "scripts": {
+    "start": "npm run storybook",
     "precommit": "lint-staged",
     "pretest": "yoshi build",
     "test": "yoshi test",
     "posttest": "yoshi lint",
-    "release": "yoshi release"
+    "release": "yoshi release",
+    "storybook": "start-storybook -c .storybook -p 6006 --ci",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "5.0.9",
+    "@storybook/addon-links": "5.0.9",
+    "@storybook/addons": "5.0.9",
+    "@storybook/react": "5.0.9",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
+    "babel-loader": "^8.0.6",
     "husky": "~0.14.0",
     "lint-staged": "^7.2.2",
     "ts-jest": "^24.0.2",
@@ -51,9 +60,7 @@
   "yoshi": {
     "hmr": "auto"
   },
-  "dependencies": {
-    "@storybook/react": "^5.1.11"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.9.0"
   }
