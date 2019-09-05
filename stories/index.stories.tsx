@@ -73,7 +73,7 @@ class ExampleComponent extends React.Component<
     return (
       <div style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
         <h3>Story is {isReady ? 'Ready' : 'Waiting'}</h3>
-        <div style={this._getStyle()}>👍</div>
+        <div style={this._getStyle()}>{isReady ? '👍' : '👎'}</div>
         {!isReady ? <p>Ready in {5 - counter}s</p> : null}
       </div>
     );
