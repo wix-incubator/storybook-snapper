@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["dom", "esnext"]
+  },
+  "include": [
+    "./__tests__/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/external-types.d.ts",
+    "./node_modules/yoshi/types.d.ts"
+  ],
+  "files": [
+    "./src/index.ts"
+  ]
+}

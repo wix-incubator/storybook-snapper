@@ -1,0 +1,60 @@
+{
+  "name": "@wix/storybook-snapper",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Jonathan Adler",
+    "email": "jonathana@wix.com"
+  },
+  "main": "dist/src/index.js",
+  "module": "dist/es/src/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://npm.dev.wixpress.com/"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "pretest": "yoshi build",
+    "test": "yoshi test",
+    "posttest": "yoshi lint",
+    "release": "yoshi release"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "husky": "~0.14.0",
+    "lint-staged": "^7.2.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "~3.0.1",
+    "yoshi": "^4.0.0"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,ts}": "yoshi lint"
+    },
+    "ignore": [
+      "**/*.d.ts"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "yoshi": {
+    "hmr": "auto"
+  },
+  "dependencies": {
+    "@storybook/react": "^5.1.11"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0"
+  }
+}

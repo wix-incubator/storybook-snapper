@@ -15,6 +15,10 @@ interface VisualTestState {
   isReady: boolean;
 }
 
+interface EyesStorybookOptions {
+  ignore?: boolean;
+}
+
 class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
   private _timeoutId: NodeJS.Timeout;
 
@@ -102,7 +106,7 @@ function runSnap(
   cb: ChildrenProp,
   ignore: boolean = false,
 ) {
-  const eyesStorybookOptions = {};
+  const eyesStorybookOptions: EyesStorybookOptions = {};
   const fullStoryName = [...currentTest].join('/');
 
   if (ignore) {
