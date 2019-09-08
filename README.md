@@ -1,6 +1,6 @@
 # storybook-snapshot
 
-A utility library originally created as an accompanying tool for [`eye-storybook`](https://github.com/applitools/eyes-storybook).
+A utility library originally created as an accompanying tool for [`eyes-storybook`](https://github.com/applitools/eyes-storybook).
 
 The idea was to be able to write snapshot tests as `describe/it` test suites.  
 Each test suite creates a `storybook` story, which `eyes-storybook`, in turn, takes a snapshot of.  
