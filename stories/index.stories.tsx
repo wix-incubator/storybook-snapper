@@ -85,4 +85,6 @@ visualize('storybook-snapper', () => {
     snap('sync example', () => <ExampleComponent />);
     snap('async example', done => <ExampleComponent onDone={done} />);
   });
+
+  snap('sync example - without story', () => <ExampleComponent />);
 });

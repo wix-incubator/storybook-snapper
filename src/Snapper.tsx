@@ -9,6 +9,8 @@ interface VisualTestProps {
   children: ChildrenProp;
   timeout: number;
   ignore: boolean;
+  dataIgnore: string;
+  dataReady: string;
 }
 
 interface VisualTestState {
@@ -26,6 +28,8 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
     children: null,
     timeout: 5000,
     ignore: false,
+    dataIgnore: DATA_IGNORE_HOOK,
+    dataReady: DATA_READY_HOOK,
   };
 
   state = {
@@ -59,19 +63,38 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
       : children;
   };
 
-  render() {
+  _getDataAttrs() {
     const { isReady } = this.state;
-    const { ignore } = this.props;
+    const { ignore, dataIgnore, dataReady } = this.props;
 
-    return (
-      <div {...{ [DATA_IGNORE_HOOK]: ignore }}>
-        <div {...{ [DATA_READY_HOOK]: isReady }}>{this._getContent()}</div>
-      </div>
-    );
+    return {
+      [dataIgnore]: ignore,
+      [dataReady]: isReady,
+    };
+  }
+
+  render() {
+    return <div {...this._getDataAttrs()}>{this._getContent()}</div>;
   }
 }
 
+interface SnapperConfiguration {
+  dataIgnoreAttr?: string;
+  dataReadyAttr?: string;
+}
+const configuration: SnapperConfiguration = {
+  dataIgnoreAttr: '',
+  dataReadyAttr: '',
+};
 let currentTest = [];
+
+export function config({
+  dataIgnoreAttr,
+  dataReadyAttr,
+}: SnapperConfiguration) {
+  configuration.dataIgnoreAttr = dataIgnoreAttr || configuration.dataIgnoreAttr;
+  configuration.dataReadyAttr = dataReadyAttr || configuration.dataReadyAttr;
+}
 
 export function visualize(visualName, tests) {
   if (currentTest.length) {
@@ -111,13 +134,21 @@ function runSnap(
 
   if (ignore) {
     (eyesStorybookOptions as any).ignore = [
-      { selector: `[${DATA_IGNORE_HOOK}="true"]` },
+      { selector: `[${configuration.dataIgnoreAttr}="true"]` },
     ];
   }
 
   storiesOf(fullStoryName, module).add(
     snapshotName,
-    () => <VisualTest ignore={ignore}>{cb}</VisualTest>,
+    () => (
+      <VisualTest
+        ignore={ignore}
+        dataIgnore={configuration.dataIgnoreAttr}
+        dataReady={configuration.dataReadyAttr}
+      >
+        {cb}
+      </VisualTest>
+    ),
     { eyes: eyesStorybookOptions },
   );
 }
