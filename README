@@ -1,0 +1,52 @@
+# storybook-snapshot
+
+A utility library originally created as an accompanying tool for [`eye-storybook`](https://github.com/applitools/eyes-storybook).
+
+The idea was to be able to write snapshot tests as `describe/it` test suites.  
+Each test suite creates a `storybook` story, which `eyes-storybook`, in turn, takes a snapshot of.  
+This library relies on some of `eyes-storybook`'s methods, however, it does not depend on `eyes-storybook`, which means it can be used just for generating stories.
+
+## Usage
+Install with
+```bash
+npm install --save-dev @wix/storybook-snapshot
+```
+or
+```bash
+yarn add --dev @wix/storybook-snapshot
+```
+
+In your visual/story file:
+```jsx harmony
+import React from 'react';
+import { visualize, story, snap, xsnap } from '@wix/storybook-snapper';
+import { MyComponent } from 'path/to/MyComponent';
+
+visualize('MyComponent', () => {
+    story('basic story', () => {
+        snap('simple render', <MyComponent/>);
+        snap('as a function', () => <MyComponent/>);     
+    });
+    
+    story('another story', () => {
+        class AsyncStoryWrapper extends React.Component {
+            componentDidMount() {
+                setTimeout(() => {
+                    this.props.onDone();
+                }, 3000);
+            }
+    
+            render() {
+                return <MyComponent/>;
+            }       
+        }
+        
+        snap('async story', done => <AsyncStoryWrapper onDone={done}/>);
+    });
+
+    snap('only one level of nesting', <MyComponent/>);
+
+    // when used with eyes-storybook, a snapshot can be ignored with xsnap
+    xsnap('ignore this test', <MyComponent/>);
+});
+```
