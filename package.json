@@ -1,5 +1,5 @@
 {
-  "name": "@wix/storybook-snapper",
+  "name": "storybook-snapper",
   "version": "1.0.0",
   "license": "UNLICENSED",
   "author": {
@@ -12,7 +12,7 @@
     "dist"
   ],
   "publishConfig": {
-    "registry": "http://npm.dev.wixpress.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "start": "npm run storybook",
