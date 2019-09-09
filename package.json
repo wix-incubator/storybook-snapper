@@ -20,7 +20,7 @@
     "pretest": "yoshi build",
     "test": "npm run test:eyes-storybook",
     "test:eyes-storybook": "if test \"$EYES_API_KEY\"; then npm run test:eyes-storybook:local ; fi",
-    "test:eyes-storybook:local": "eyes-storybook -c ./.storybook-test",
+    "test:eyes-storybook:local": "eyes-storybook -c ./.storybook",
     "posttest": "yoshi lint",
     "release": "yoshi release",
     "storybook": "start-storybook -c .storybook -p 6006 --ci",
