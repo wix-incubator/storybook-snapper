@@ -1,7 +1,7 @@
 {
   "name": "storybook-snapper",
   "version": "1.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": {
     "name": "Jonathan Adler",
     "email": "jonathana@wix.com"
