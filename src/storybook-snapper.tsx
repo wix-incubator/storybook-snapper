@@ -28,8 +28,6 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
     children: null,
     timeout: 5000,
     ignore: false,
-    dataIgnore: DATA_IGNORE_HOOK,
-    dataReady: DATA_READY_HOOK,
   };
 
   state = {
@@ -68,8 +66,8 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
     const { ignore, dataIgnore, dataReady } = this.props;
 
     return {
-      [dataIgnore]: ignore,
-      [dataReady]: isReady,
+      [dataIgnore || DATA_IGNORE_HOOK]: ignore,
+      [dataReady || DATA_READY_HOOK]: isReady,
     };
   }
 

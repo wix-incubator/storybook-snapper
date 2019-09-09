@@ -1,1 +1,1 @@
-export { visualize, story, snap, xsnap } from './Snapper';
+export { visualize, story, snap, xsnap } from './storybook-snapper';
