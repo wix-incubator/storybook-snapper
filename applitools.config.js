@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 const appName = require('./package.json').name;
 const merge = require('lodash/merge');
-const { DATA_READY_HOOK } = require('./src/dataHooks.js');
+const { DATA_READY_HOOK } = require('./dist/src/dataHooks');
 
 const PULL_REQUEST_PARENT_HASH_INDEX = 2;
 const HEAD_HASH_INDEX = 0;

@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './dataHooks';
-import { ChildrenProp, RenderFunction } from './external-types';
+
+export declare type RenderFunction = (cb: () => void) => React.ReactNode;
+export declare type ChildrenProp = React.ReactNode | RenderFunction;
 
 interface VisualTestProps {
   children: ChildrenProp;
