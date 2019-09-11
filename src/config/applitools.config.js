@@ -1,4 +1,5 @@
 const { execSync } = require('child_process');
+const merge = require('lodash/merge');
 const { DATA_READY_HOOK } = require('./hooks');
 
 const PULL_REQUEST_PARENT_HASH_INDEX = 2;
@@ -34,10 +35,10 @@ function getBatchId() {
   return batchId;
 }
 
-module.exports = ({appName, apiKey}) => ({
-  apiKey: apiKey || process.env.EYES_API_KEY,
+module.exports = ({appName, config}) => merge({
+  apiKey: process.env.EYES_API_KEY,
   batchId: getBatchId(),
   batchName: appName,
   exitcode: true,
   waitBeforeScreenshots: `[${DATA_READY_HOOK}="true"]`,
-});
+}, config);
