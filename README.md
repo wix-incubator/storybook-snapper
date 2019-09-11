@@ -9,11 +9,11 @@ This library relies on some of `eyes-storybook`'s methods, however, it does not 
 ## Usage
 Install with
 ```bash
-npm install --save-dev @wix/storybook-snapshot
+npm install --save-dev storybook-snapshot
 ```
 or
 ```bash
-yarn add --dev @wix/storybook-snapshot
+yarn add --dev storybook-snapshot
 ```
 
 In your visual/story file:
