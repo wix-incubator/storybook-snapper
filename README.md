@@ -50,3 +50,16 @@ visualize('MyComponent', () => {
     xsnap('ignore this test', <MyComponent/>);
 });
 ```
+
+## Testing asynchronious actions
+
+In order for the asynchronious tests to work, `eyes-storybook` must be configured in a way it knows to wait for the component to notify it is done. This is done by setting a flag on the relevant story and wait for applitools to look for this flag.
+
+Change your `applitools.config.js` file to the following:
+```js
+module.exports = {
+  waitBeforeScreenshots: `[data-test-ready="true"]`,
+}
+```
+
+In the future, this hard-coded value will be configurable.
