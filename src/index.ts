@@ -6,4 +6,3 @@ export {
   ChildrenProp,
   RenderFunction,
 } from './storybook-snapper';
-export { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './config/hooks';

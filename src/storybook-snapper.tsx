@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import HOOKS from './config/hooks';
+import HOOKS from './hooks';
 
 const { DATA_IGNORE_HOOK, DATA_READY_HOOK } = HOOKS;
 

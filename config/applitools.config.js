@@ -1,6 +1,6 @@
 const { execSync } = require('child_process');
 const merge = require('lodash/merge');
-const { DATA_READY_HOOK } = require('./hooks');
+const { DATA_READY_HOOK } = require('../src/hooks');
 
 const PULL_REQUEST_PARENT_HASH_INDEX = 2;
 const HEAD_HASH_INDEX = 0;

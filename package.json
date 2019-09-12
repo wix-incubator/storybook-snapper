@@ -11,7 +11,8 @@
   "types": "dist/src/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "config"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

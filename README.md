@@ -50,3 +50,26 @@ visualize('MyComponent', () => {
     xsnap('ignore this test', <MyComponent/>);
 });
 ```
+
+## Testing asynchronious actions
+
+In order for the asynchronious tests to work, `eyes-storybook` must be configured in a way it knows to wait for the component to notify it is done. This is done by setting a flag on the relevant story and inform applitools to look for this flag and wait.
+
+`storybook-snapper` provides a preconfigured `applitools.config.js` which you should use in your own `applitools.config.js` file.
+
+Change your `applitools.config.js` file to the following:
+```js
+const appName = require('./package').name;
+const applitoolsConfig = require('storybook-snapper/config/applitools.config');
+
+// optional local configuration file for overrides
+let config;
+
+try {
+  // for local testing you can add the `apiKey` to your private configuration file  
+  config = require('./applitools.private.config.js');
+} catch (e) {}
+
+// Note that the `appName` property is required
+module.exports = applitoolsConfig({appName, config});
+```

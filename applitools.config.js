@@ -1,5 +1,5 @@
 const appName = require('./package').name;
-const applitoolsConfig = require('./src/config/applitools.config');
+const applitoolsConfig = require('./config/applitools.config');
 
 let config;
 
