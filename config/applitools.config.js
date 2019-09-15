@@ -1,3 +1,4 @@
+const findPkg = require('find-pkg');
 const { execSync } = require('child_process');
 const merge = require('lodash/merge');
 const { DATA_READY_HOOK } = require('../src/hooks');
@@ -29,10 +30,15 @@ function getBatchId() {
   return getPRHeadHash();
 }
 
-module.exports = ({appName, config}) => merge({
+function getAppName() {
+  const packageFile = require(findPkg.sync('.'));
+  return packageFile.name;
+}
+
+module.exports = ({config}) => merge({
   apiKey: process.env.EYES_API_KEY,
   batchId: getBatchId(),
-  batchName: appName,
+  batchName: getAppName(),
   exitcode: true,
   waitBeforeScreenshots: `[${DATA_READY_HOOK}="true"]`,
 }, config);
