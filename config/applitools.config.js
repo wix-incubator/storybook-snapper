@@ -30,15 +30,10 @@ function getBatchId() {
   return getPRHeadHash();
 }
 
-function getAppName() {
-  const packageFile = require(findPkg.sync('.'));
-  return packageFile.name;
-}
-
 module.exports = ({config}) => merge({
   apiKey: process.env.EYES_API_KEY,
   batchId: getBatchId(),
-  batchName: getAppName(),
+  batchName: process.env.npm_package_name,
   exitcode: true,
   waitBeforeScreenshots: `[${DATA_READY_HOOK}="true"]`,
 }, config);
