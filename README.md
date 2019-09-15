@@ -21,7 +21,7 @@ This configuration is necessary for async tests to work.
 
 In you `applitools.config.js` file:
 ```js
-const { applitoolsConfig } = require('storybook-snapper');
+const applitoolsConfig = require('storybook-snapper/config/applitools.config');
 
 // optional local configuration file for overrides
 let config;
