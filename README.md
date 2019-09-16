@@ -2,7 +2,7 @@
 
 A utility library originally created as an accompanying tool for [`eyes-storybook`](https://github.com/applitools/eyes-storybook).
 
-The idea is to write snapshot tests as `describe/it` test suites like in familiar testing frameworks. Each test suite creates a `storybook` story, which `eyes-storybook`, in turn, takes a snapshot of.  
+The idea is to write snapshot tests as `describe/it` test suites like in familiar testing frameworks. Each test suite creates a `storybook` story, which `eyes-storybook`, in turn, takes a snapshot of.
 
 This library relies on some of `eyes-storybook`'s methods, however, it does not depend on `eyes-storybook`, which means it can be used just for generating stories.
 
@@ -16,6 +16,25 @@ or
 yarn add --dev storybook-snapper
 ```
 
+For testing, use the `applitoolsConfig` method in your `applitools.config.js` file, in order to generate a preconfigured configuration.
+This configuration is necessary for async tests to work.
+
+In you `applitools.config.js` file:
+```js
+const applitoolsConfig = require('storybook-snapper/config/applitools.config');
+
+// optional local configuration file for overrides
+let config;
+
+try {
+  // for local testing you can add the `apiKey` to your private configuration file
+  config = require('./applitools.private.config.js');
+} catch (e) {}
+
+// Note that the `appName` property is required
+module.exports = applitoolsConfig({config});
+```
+
 In your visual/story file:
 ```jsx harmony
 import React from 'react';
@@ -25,9 +44,9 @@ import { MyComponent } from 'path/to/MyComponent';
 visualize('MyComponent', () => {
     story('basic story', () => {
         snap('simple render', <MyComponent/>);
-        snap('as a function', () => <MyComponent/>);     
+        snap('as a function', () => <MyComponent/>);
     });
-    
+
     story('another story', () => {
         class AsyncStoryWrapper extends React.Component {
             componentDidMount() {
@@ -35,12 +54,12 @@ visualize('MyComponent', () => {
                     this.props.onDone();
                 }, 3000);
             }
-    
+
             render() {
                 return <MyComponent/>;
-            }       
+            }
         }
-        
+
         snap('async story', done => <AsyncStoryWrapper onDone={done}/>);
     });
 
@@ -50,3 +69,9 @@ visualize('MyComponent', () => {
     xsnap('ignore this test', <MyComponent/>);
 });
 ```
+
+## Testing asynchronous actions
+
+In order for the asynchronous tests to work, `eyes-storybook` must be configured in a way it knows to wait for the component to notify it is done.
+This is done by setting a flag on the relevant story and inform applitools to look for this flag and wait.
+
