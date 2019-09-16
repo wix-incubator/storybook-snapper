@@ -27,7 +27,13 @@ function getPRHeadHash() {
 }
 
 function getBatchId() {
-  return getPRHeadHash();
+  let batchId;
+  try {
+    batchId = getPRHeadHash();
+  } catch (e) {
+    batchId = process.env.BUILD_VCS_NUMBER;
+  }
+  return batchId;
 }
 
 module.exports = ({config}) => merge({
