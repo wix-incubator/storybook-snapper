@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import HOOKS from './hooks';
-
-const { DATA_IGNORE_HOOK, DATA_READY_HOOK } = HOOKS;
+import { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './hooks';
 
 export declare type RenderFunction = (cb: () => void) => React.ReactNode;
 export declare type ChildrenProp = React.ReactNode | RenderFunction;
