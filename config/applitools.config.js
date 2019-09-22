@@ -39,7 +39,7 @@ function getServerUrl() {
   const serverUrlConfig = {};
 
   if (process.env.EYES_SERVER_URL) {
-    serverUrlConfig.serverUrl = process.env.EYES_SERVER_URL;
+    serverUrlConfig.serverUrl = process.env.APPLITOOLS_SERVER_URL;
   }
 
   return serverUrlConfig;
