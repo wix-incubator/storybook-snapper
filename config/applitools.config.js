@@ -35,10 +35,20 @@ function getBatchId() {
   return batchId;
 }
 
+function getServerUrl() {
+  const serverUrlConfig = {};
+
+  if (process.env.EYES_SERVER_URL) {
+    serverUrlConfig.serverUrl = process.env.EYES_SERVER_URL;
+  }
+
+  return serverUrlConfig;
+}
+
 module.exports = ({config}) => merge({
   apiKey: process.env.EYES_API_KEY,
   batchId: getBatchId(),
   batchName: process.env.npm_package_name,
   exitcode: true,
   waitBeforeScreenshots: `[${DATA_READY_HOOK}="true"]`,
-}, config);
+}, getServerUrl(), config);
