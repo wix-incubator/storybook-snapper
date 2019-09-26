@@ -45,10 +45,10 @@ function getServerUrl() {
   return serverUrlConfig;
 }
 
-module.exports = ({config}) => merge({
+module.exports = ({config, asyncSelector}) => merge({
   apiKey: process.env.EYES_API_KEY,
   batchId: getBatchId(),
   batchName: process.env.npm_package_name,
   exitcode: true,
-  waitBeforeScreenshots: `[${DATA_READY_HOOK}="true"]`,
+  waitBeforeScreenshots: asyncSelector === true ? `[${DATA_READY_HOOK}="true"]` : asyncSelector,
 }, getServerUrl(), config);

@@ -6,4 +6,4 @@ try {
   config = require('./applitools.private.config.js');
 } catch (e) {}
 
-module.exports = applitoolsConfig({config});
+module.exports = applitoolsConfig({config, asyncSelector: true});
