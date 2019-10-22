@@ -19,7 +19,7 @@ interface VisualTestState {
 
 interface EyesStorybookOptions {
   ignore?: boolean;
-  waitBeforeScreenshot?: string | (() => {}) | number;
+  waitBeforeScreenshot?: string | number;
 }
 
 class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
