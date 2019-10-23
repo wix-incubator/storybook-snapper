@@ -19,6 +19,7 @@ interface VisualTestState {
 
 interface EyesStorybookOptions {
   ignore?: boolean;
+  waitBeforeScreenshot?: string | number;
 }
 
 class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
@@ -127,7 +128,9 @@ function runSnap(
   cb: ChildrenProp,
   ignore: boolean = false,
 ) {
-  const eyesStorybookOptions: EyesStorybookOptions = {};
+  const eyesStorybookOptions: EyesStorybookOptions = {
+    waitBeforeScreenshot: `[${DATA_READY_HOOK}="true"]`,
+  };
   const fullStoryName = [...currentTest].join('/');
 
   if (ignore) {
@@ -147,7 +150,9 @@ function runSnap(
         {cb}
       </VisualTest>
     ),
-    { eyes: eyesStorybookOptions },
+    {
+      eyes: eyesStorybookOptions,
+    },
   );
 }
 

@@ -1,6 +1,5 @@
 const { execSync } = require('child_process');
 const merge = require('lodash/merge');
-const { DATA_READY_HOOK } = require('../dist/src/hooks');
 
 const PULL_REQUEST_PARENT_HASH_INDEX = 2;
 const HEAD_HASH_INDEX = 0;
@@ -50,5 +49,4 @@ module.exports = ({config}) => merge({
   batchId: getBatchId(),
   batchName: process.env.npm_package_name,
   exitcode: true,
-  waitBeforeScreenshots: `[${DATA_READY_HOOK}="true"]`,
 }, getServerUrl(), config);
