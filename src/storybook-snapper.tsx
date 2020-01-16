@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
+import * as Storybook from '@storybook/react';
 import { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './hooks';
+
+const { storiesOf } = Storybook;
 
 export declare type RenderFunction = (cb: () => void) => React.ReactNode;
 export declare type ChildrenProp = React.ReactNode | RenderFunction;
@@ -17,9 +19,21 @@ interface VisualTestState {
   isReady: boolean;
 }
 
+interface RunBeforeArgs {
+  rootEl: any;
+  story: any;
+}
+
+type RunBefore = (runBeforeArgs: RunBeforeArgs) => Promise<void>;
+
 interface EyesStorybookOptions {
   ignore?: boolean;
   waitBeforeScreenshot?: string | number;
+  runBefore?: RunBefore;
+}
+
+function functionUsesArgs(fn: Function) {
+  return fn.length > 0;
 }
 
 class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
@@ -37,7 +51,7 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
 
   static isAsync({ children }: { children: ChildrenProp }) {
     return typeof children === 'function'
-      ? (children as RenderFunction).length > 0
+      ? functionUsesArgs(children as RenderFunction)
       : false;
   }
 
@@ -126,12 +140,17 @@ export function story(storyName, cb) {
 function runSnap(
   snapshotName: string,
   cb: ChildrenProp,
-  ignore: boolean = false,
+  runBefore?: RunBefore,
+  ignore?: boolean,
 ) {
   const eyesStorybookOptions: EyesStorybookOptions = {
-    waitBeforeScreenshot: `[${DATA_READY_HOOK}="true"]`,
+    runBefore,
   };
   const fullStoryName = [...currentTest].join('/');
+
+  if (typeof cb === 'function' && functionUsesArgs(cb)) {
+    eyesStorybookOptions.waitBeforeScreenshot = `[${DATA_READY_HOOK}="true"]`;
+  }
 
   if (ignore) {
     (eyesStorybookOptions as any).ignore = [
@@ -156,10 +175,10 @@ function runSnap(
   );
 }
 
-export function snap(snapshotName: string, cb: ChildrenProp) {
-  runSnap(snapshotName, cb);
+export function snap(snapshotName: string, cb: ChildrenProp, rb?: RunBefore) {
+  runSnap(snapshotName, cb, rb);
 }
 
-export function xsnap(snapshotName: string, cb: ChildrenProp) {
-  runSnap(snapshotName, cb, true);
+export function xsnap(snapshotName: string, cb: ChildrenProp, rb?: RunBefore) {
+  runSnap(snapshotName, cb, rb, true);
 }
