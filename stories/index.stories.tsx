@@ -1,5 +1,4 @@
 import React from 'react';
-import { within } from '@testing-library/dom';
 import { visualize, story, snap } from '../src';
 import styles from './stories.scss';
 
@@ -81,24 +80,18 @@ visualize('storybook-snapper', () => {
     snap('sync example', () => <ExampleComponent />);
     snap('async example', done => <ExampleComponent onDone={done} />);
 
-    snap(
-      'run before',
-      <ExampleComponent />,
-      async ({ rootEl, story: storyEl }) => {
-        console.log('adler', 'index.stories.tsx:88', rootEl, storyEl);
-        try {
-          const { findBy } = within(rootEl);
-          const img = await findBy('img');
-          await new Promise(res => {
-            (img as HTMLElement).addEventListener('load', res);
-            (img as HTMLImageElement).src = TEST_IMG_SRC;
-          });
-        } catch (e) {
-          console.log('adler', 'index.stories.tsx:96', e);
-          return Promise.reject();
-        }
-      },
-    );
+    snap('run before', <ExampleComponent />, async ({ rootEl }) => {
+      const img = rootEl.querySelector('img') as HTMLImageElement;
+
+      return new Promise(res => {
+        img.addEventListener('load', (e: UIEvent) => {
+          if ((e.target as HTMLImageElement).src === TEST_IMG_SRC) {
+            res();
+          }
+        });
+        img.src = TEST_IMG_SRC;
+      });
+    });
   });
 
   snap('sync example - without story', () => <ExampleComponent />);
