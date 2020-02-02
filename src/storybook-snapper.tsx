@@ -1,8 +1,6 @@
 import * as React from 'react';
-import * as Storybook from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './hooks';
-
-const { storiesOf } = Storybook;
 
 export declare type RenderFunction = (cb: () => void) => React.ReactNode;
 export declare type ChildrenProp = React.ReactNode | RenderFunction;
@@ -32,8 +30,8 @@ interface EyesStorybookOptions {
   runBefore?: RunBefore;
 }
 
-function functionUsesArgs(fn: Function) {
-  return fn.length > 0;
+function isAsyncTest(fn: any) {
+  return typeof fn === 'function' && fn.length > 0;
 }
 
 class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
@@ -46,14 +44,8 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
   };
 
   state = {
-    isReady: !VisualTest.isAsync(this.props),
+    isReady: !isAsyncTest(this.props.children),
   };
-
-  static isAsync({ children }: { children: ChildrenProp }) {
-    return typeof children === 'function'
-      ? functionUsesArgs(children as RenderFunction)
-      : false;
-  }
 
   componentDidMount(): void {
     const { isReady } = this.state;
@@ -148,7 +140,7 @@ function runSnap(
   };
   const fullStoryName = [...currentTest].join('/');
 
-  if (typeof cb === 'function' && functionUsesArgs(cb)) {
+  if (isAsyncTest(cb)) {
     eyesStorybookOptions.waitBeforeScreenshot = `[${DATA_READY_HOOK}="true"]`;
   }
 
