@@ -5,7 +5,7 @@ import { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './hooks';
 export declare type RenderFunction = (cb: () => void) => React.ReactNode;
 export declare type ChildrenProp = React.ReactNode | RenderFunction;
 
-export const DEFAULT_TIMEOUT = 30000;
+export const DEFAULT_TIMEOUT = 25000;
 
 interface VisualTestProps {
   children: ChildrenProp;
