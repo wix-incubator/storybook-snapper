@@ -13,7 +13,7 @@
     "lib": ["dom", "esnext"]
   },
   "include": [
-    "./__tests__/**/*.ts",
+    "./__tests__/**/*.spec.tsx",
     "./src/**/*.tsx",
     "./src/external-types.d.ts",
     "./node_modules/yoshi/types.d.ts"
