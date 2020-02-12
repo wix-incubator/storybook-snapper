@@ -1,88 +1,13 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { DATA_IGNORE_HOOK, DATA_READY_HOOK } from './hooks';
+import { DATA_READY_HOOK } from './hooks';
+import {
+  ChildrenProp,
+  EyesStorybookOptions,
+  SnapperConfiguration,
+} from './types';
+import { VisualTest } from './VisualTest';
 
-export declare type RenderFunction = (cb: () => void) => React.ReactNode;
-export declare type ChildrenProp = React.ReactNode | RenderFunction;
-
-export const DEFAULT_TIMEOUT = 25000;
-
-interface VisualTestProps {
-  children: ChildrenProp;
-  timeout: number;
-  ignore: boolean;
-  dataIgnore: string;
-  dataReady: string;
-}
-
-interface VisualTestState {
-  isReady: boolean;
-}
-
-interface EyesStorybookOptions {
-  ignore?: boolean;
-  waitBeforeScreenshot?: string | number;
-}
-
-class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
-  private _timeoutId: NodeJS.Timeout;
-
-  static defaultProps = {
-    children: null,
-    timeout: DEFAULT_TIMEOUT,
-    ignore: false,
-  };
-
-  state = {
-    isReady: !VisualTest.isAsync(this.props),
-  };
-
-  static isAsync({ children }: { children: ChildrenProp }) {
-    return typeof children === 'function'
-      ? (children as RenderFunction).length > 0
-      : false;
-  }
-
-  componentDidMount(): void {
-    const { isReady } = this.state;
-
-    if (!isReady) {
-      this._timeoutId = setTimeout(this._done, this.props.timeout);
-    }
-  }
-
-  _done = () => {
-    clearTimeout(this._timeoutId);
-    this.setState({ isReady: true });
-  };
-
-  _getContent = () => {
-    const { children } = this.props;
-
-    return typeof children === 'function'
-      ? (children as RenderFunction)(this._done)
-      : children;
-  };
-
-  _getDataAttrs() {
-    const { isReady } = this.state;
-    const { ignore, dataIgnore, dataReady } = this.props;
-
-    return {
-      [dataIgnore || DATA_IGNORE_HOOK]: ignore,
-      [dataReady || DATA_READY_HOOK]: isReady,
-    };
-  }
-
-  render() {
-    return <div {...this._getDataAttrs()}>{this._getContent()}</div>;
-  }
-}
-
-interface SnapperConfiguration {
-  dataIgnoreAttr?: string;
-  dataReadyAttr?: string;
-}
 const configuration: SnapperConfiguration = {
   dataIgnoreAttr: '',
   dataReadyAttr: '',
@@ -148,6 +73,7 @@ function runSnap(
         ignore={ignore}
         dataIgnore={configuration.dataIgnoreAttr}
         dataReady={configuration.dataReadyAttr}
+        testName={`${fullStoryName} ${snapshotName}`}
       >
         {cb}
       </VisualTest>
