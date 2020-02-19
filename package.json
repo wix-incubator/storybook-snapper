@@ -30,9 +30,9 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@applitools/eyes-storybook": "^2.7.35",
+    "@applitools/eyes-storybook": "^3.2.5",
     "@babel/core": "^7.5.5",
-    "@storybook/react": "5.0.9",
+    "@storybook/react": "^5.0.9",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
@@ -43,7 +43,8 @@
     "react": "^16.9.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.2.4",
-    "yoshi": "^4.0.0"
+    "yoshi": "^4.0.0",
+    "yoshi-style-dependencies": "^4.23.7"
   },
   "dependencies": {
     "lodash": "^4.17.15"

@@ -19,9 +19,21 @@ interface VisualTestState {
   isReady: boolean;
 }
 
+interface RunBeforeArgs {
+  rootEl: any;
+  story: any;
+}
+
+type RunBefore = (runBeforeArgs: RunBeforeArgs) => Promise<void>;
+
 interface EyesStorybookOptions {
   ignore?: boolean;
   waitBeforeScreenshot?: string | number;
+  runBefore?: RunBefore;
+}
+
+function isAsyncTest(fn: any) {
+  return typeof fn === 'function' && fn.length > 0;
 }
 
 class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
@@ -34,14 +46,8 @@ class VisualTest extends React.Component<VisualTestProps, VisualTestState> {
   };
 
   state = {
-    isReady: !VisualTest.isAsync(this.props),
+    isReady: !isAsyncTest(this.props.children),
   };
-
-  static isAsync({ children }: { children: ChildrenProp }) {
-    return typeof children === 'function'
-      ? (children as RenderFunction).length > 0
-      : false;
-  }
 
   componentDidMount(): void {
     const { isReady } = this.state;
@@ -128,12 +134,17 @@ export function story(storyName, cb) {
 function runSnap(
   snapshotName: string,
   cb: ChildrenProp,
-  ignore: boolean = false,
+  runBefore?: RunBefore,
+  ignore?: boolean,
 ) {
   const eyesStorybookOptions: EyesStorybookOptions = {
-    waitBeforeScreenshot: `[${DATA_READY_HOOK}="true"]`,
+    runBefore,
   };
   const fullStoryName = [...currentTest].join('/');
+
+  if (isAsyncTest(cb)) {
+    eyesStorybookOptions.waitBeforeScreenshot = `[${DATA_READY_HOOK}="true"]`;
+  }
 
   if (ignore) {
     (eyesStorybookOptions as any).ignore = [
@@ -158,10 +169,10 @@ function runSnap(
   );
 }
 
-export function snap(snapshotName: string, cb: ChildrenProp) {
-  runSnap(snapshotName, cb);
+export function snap(snapshotName: string, cb: ChildrenProp, rb?: RunBefore) {
+  runSnap(snapshotName, cb, rb);
 }
 
-export function xsnap(snapshotName: string, cb: ChildrenProp) {
-  runSnap(snapshotName, cb, true);
+export function xsnap(snapshotName: string, cb: ChildrenProp, rb?: RunBefore) {
+  runSnap(snapshotName, cb, rb, true);
 }
