@@ -66,6 +66,9 @@ visualize('MyComponent', () => {
     snap('only one level of nesting', <MyComponent/>);
 
     // when used with eyes-storybook, a snapshot can be ignored with xsnap
+    snap.skip('ignore this test', <MyComponent/>);
+
+    // alias for "snap.skip"
     xsnap('ignore this test', <MyComponent/>);
 });
 ```
