@@ -36,7 +36,7 @@ module.exports = applitoolsConfig({config});
 ```
 
 In your visual/story file:
-```jsx harmony
+```jsx
 import React from 'react';
 import { visualize, story, snap, xsnap } from 'storybook-snapper';
 import { MyComponent } from 'path/to/MyComponent';
@@ -65,16 +65,21 @@ visualize('MyComponent', () => {
 
     snap('only one level of nesting', <MyComponent/>);
 
-    // when used with eyes-storybook, a snapshot can be ignored with xsnap
+    /**
+    * when used with eyes-storybook,
+    * a snapshot can be ignored with xsnap
+    */
     snap.skip('ignore this test', <MyComponent/>);
 
-    // alias for "snap.skip"
+    /**
+    * alias for "snap.skip"
+    */
     xsnap('ignore this test', <MyComponent/>);
+
+    /**
+    * adds a red outline when a snapshot is taken
+    * helpful for debugging async stories
+    */
+    snap.debug('debug story', done => <AsyncStoryWrapper onDone={done}/>)
 });
 ```
-
-## Testing asynchronous actions
-
-In order for the asynchronous tests to work, `eyes-storybook` must be configured in a way it knows to wait for the component to notify it is done.
-This is done by setting a flag on the relevant story and inform applitools to look for this flag and wait.
-
