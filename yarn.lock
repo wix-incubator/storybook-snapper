@@ -2,118 +2,114 @@
 # yarn lockfile v1
 
 
-"@applitools/dom-snapshot@3.5.2":
-  version "3.5.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-3.5.2.tgz#07df10f8ecb74e07ab4f84eec29c6a053dec1f89"
-  integrity sha1-B98Q+Oy3TgerT4TuwpxqBT3sH4k=
+"@applitools/dom-capture@8.0.1":
+  version "8.0.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-capture/-/dom-capture-8.0.1.tgz#70a9e2badba612f2964c950db008175612eecca8"
+  integrity sha1-cKniutumEvKWTJUNsAgXVhLuzKg=
   dependencies:
-    "@applitools/functional-commons" "^1.5.4"
-    css-tree "^1.0.0-alpha.39"
+    "@applitools/dom-shared" "1.0.4"
+    "@applitools/functional-commons" "1.6.0"
 
-"@applitools/dom-snapshot@^3.0.4":
-  version "3.5.3"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-3.5.3.tgz#25271f534cb37c7712a7f864de442a14ad1b3adf"
-  integrity sha1-JScfU0yzfHcSp/hk3kQqFK0bOt8=
-  dependencies:
-    "@applitools/functional-commons" "1.5.4"
-    css-tree "^1.0.0-alpha.39"
+"@applitools/dom-shared@1.0.4":
+  version "1.0.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-shared/-/dom-shared-1.0.4.tgz#1a59116f3f29fb140ac031949547531348c9d972"
+  integrity sha1-GlkRbz8p+xQKwDGUlUdTE0jJ2XI=
 
-"@applitools/eyes-common@3.23.1":
-  version "3.23.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-common/-/eyes-common-3.23.1.tgz#70a270662964a38259ac69236019314699352ad1"
-  integrity sha1-cKJwZilko4JZrGkjYBkxRpk1KtE=
+"@applitools/dom-snapshot@4.2.2":
+  version "4.2.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-4.2.2.tgz#6c52a65ea3ed732b27921a313a6598f9fa7a1877"
+  integrity sha1-bFKmXqPtcysnkhoxOmWY+fp6GHc=
   dependencies:
-    cosmiconfig "^6.0.0"
-    dateformat "^3.0.3"
-    debug "^4.1.1"
-    deepmerge "^4.2.2"
-    png-async "^0.9.4"
-    stack-trace "^0.0.10"
+    "@applitools/dom-shared" "1.0.4"
+    "@applitools/functional-commons" "1.6.0"
+    css-tree "1.0.0-alpha.39"
+    pako "1.0.11"
 
-"@applitools/eyes-common@^3.12.0", "@applitools/eyes-common@^3.17.2":
-  version "3.24.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-common/-/eyes-common-3.24.0.tgz#15a7e17e92b723487ffa413c87cb88d71ac106c4"
-  integrity sha1-FafhfpK3I0h/+kE8h8uI1xrBBsQ=
+"@applitools/dom-snapshot@4.2.4":
+  version "4.2.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-4.2.4.tgz#3054e08c2774ac924592d2f66569ec6bee08f91f"
+  integrity sha1-MFTgjCd0rJJFktL2ZWnsa+4I+R8=
   dependencies:
-    cosmiconfig "^6.0.0"
-    dateformat "^3.0.3"
-    debug "^4.1.1"
-    deepmerge "^4.2.2"
-    png-async "^0.9.4"
-    stack-trace "^0.0.10"
+    "@applitools/dom-shared" "1.0.4"
+    "@applitools/functional-commons" "1.6.0"
+    css-tree "1.0.0-alpha.39"
+    pako "1.0.11"
 
-"@applitools/eyes-sdk-core@10.1.2":
-  version "10.1.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-10.1.2.tgz#9db608eae787c879c9115a1ee9954a059d56eeae"
-  integrity sha1-nbYI6ueHyHnJEVoe6ZVKBZ1W7q4=
+"@applitools/eyes-sdk-core@12.5.3":
+  version "12.5.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-12.5.3.tgz#6c7234b75acc04b475fcc6c1fd536922d5da2bb4"
+  integrity sha1-bHI0t1rMBLR1/MbB/VNpItXaK7Q=
   dependencies:
-    "@applitools/eyes-common" "3.23.1"
+    "@applitools/dom-capture" "8.0.1"
+    "@applitools/dom-snapshot" "4.2.2"
     "@applitools/isomorphic-fetch" "3.0.0"
+    "@applitools/snippets" "2.1.0"
     axios "0.19.2"
     chalk "3.0.0"
-    es6-promise-pool "2.5.0"
+    cosmiconfig "6.0.0"
+    dateformat "3.0.3"
+    debug "4.2.0"
+    deepmerge "4.2.2"
+    png-async "0.9.4"
+    stack-trace "0.0.10"
     tunnel "0.0.6"
 
-"@applitools/eyes-sdk-core@^5.20.5":
-  version "5.25.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-5.25.0.tgz#540ff6a7a409f7191a02101ef342de718bbf76c6"
-  integrity sha1-VA/2p6QJ9xkaAhAe80LecYu/dsY=
+"@applitools/eyes-sdk-core@12.5.4":
+  version "12.5.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-12.5.4.tgz#3bd164fe56c4443ebedf825cd0bbee4fd819fa43"
+  integrity sha1-O9Fk/lbERD6+34Jc0LvuT9gZ+kM=
   dependencies:
-    "@applitools/eyes-common" "^3.17.2"
-    "@applitools/isomorphic-fetch" "^3.0.0"
-    "@applitools/sdk-fake-eyes-server" "^1.0.3"
-    axios "^0.19.0"
-    chalk "^3.0.0"
-    es6-promise-pool "^2.5.0"
+    "@applitools/dom-capture" "8.0.1"
+    "@applitools/dom-snapshot" "4.2.3"
+    "@applitools/isomorphic-fetch" "3.0.0"
+    "@applitools/snippets" "2.1.0"
+    axios "0.19.2"
+    chalk "3.0.0"
+    cosmiconfig "6.0.0"
+    dateformat "3.0.3"
+    debug "4.2.0"
+    deepmerge "4.2.2"
+    png-async "0.9.4"
+    stack-trace "0.0.10"
     tunnel "0.0.6"
 
-"@applitools/eyes-storybook@^2.7.35":
-  version "2.9.6"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-storybook/-/eyes-storybook-2.9.6.tgz#cc15f6a163d169c2437688b136896429cb256638"
-  integrity sha1-zBX2oWPRacJDdoixNolkKcslZjg=
+"@applitools/eyes-storybook@^3.0.0":
+  version "3.10.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-storybook/-/eyes-storybook-3.10.1.tgz#2c0d87d37c1a51e539eefaba38e7ac90c05d7c72"
+  integrity sha1-LA2H03waUeU57vq6OOeskMBdfHI=
   dependencies:
-    "@applitools/dom-snapshot" "^3.0.4"
-    "@applitools/eyes-common" "^3.12.0"
-    "@applitools/eyes-sdk-core" "^5.20.5"
-    "@applitools/functional-commons" "^1.5.2"
-    "@applitools/monitoring-commons" "^1.0.15"
-    "@applitools/visual-grid-client" "^13.3.1"
-    chalk "^2.4.2"
-    detect-port "^1.3.0"
-    lodash.flatten "^4.4.0"
-    lodash.pick "^4.4.0"
-    ora "^3.4.0"
-    puppeteer "^1.20.0"
-    yargs "^12.0.5"
+    "@applitools/dom-snapshot" "4.2.4"
+    "@applitools/eyes-sdk-core" "12.5.4"
+    "@applitools/functional-commons" "1.6.0"
+    "@applitools/monitoring-commons" "1.0.19"
+    "@applitools/visual-grid-client" "15.0.16"
+    boxen "4.2.0"
+    chalk "3.0.0"
+    detect-port "1.3.0"
+    lodash.flatten "4.4.0"
+    lodash.pick "4.4.0"
+    ora "3.4.0"
+    puppeteer "1.20.0"
+    yargs "12.0.5"
 
-"@applitools/feature-flags@2.1.1":
-  version "2.1.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/feature-flags/-/feature-flags-2.1.1.tgz#cf784e3b7ab4f322b0ebe62a5ea45ec56738b2d4"
-  integrity sha1-z3hOO3q08yKw6+YqXqRexWc4stQ=
-
-"@applitools/functional-commons@1.5.4":
-  version "1.5.4"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/functional-commons/-/functional-commons-1.5.4.tgz#d32f2bbc6a2598872b3a385d054fcf8e40c30a40"
-  integrity sha1-0y8rvGolmIcrOjhdBU/PjkDDCkA=
-
-"@applitools/functional-commons@^1.5.2", "@applitools/functional-commons@^1.5.4":
+"@applitools/functional-commons@1.6.0", "@applitools/functional-commons@^1.5.5":
   version "1.6.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/functional-commons/-/functional-commons-1.6.0.tgz#ea850c4f7832fcb6396b79b35faccac69f6482a9"
   integrity sha1-6oUMT3gy/LY5a3mzX6zKxp9kgqk=
 
-"@applitools/http-commons@2.3.12":
-  version "2.3.12"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/http-commons/-/http-commons-2.3.12.tgz#c04bfa968ce7d6a07f8486d5dff88465cc46cf18"
-  integrity sha1-wEv6lozn1qB/hIbV3/iEZcxGzxg=
+"@applitools/http-commons@2.4.3":
+  version "2.4.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/http-commons/-/http-commons-2.4.3.tgz#f1fd01840eb8bd77619150b27b1a18f3ff72847e"
+  integrity sha1-8f0BhA64vXdhkVCyexoY8/9yhH4=
   dependencies:
-    "@applitools/functional-commons" "^1.5.2"
-    "@applitools/monitoring-commons" "^1.0.15"
-    agentkeepalive "^4.0.2"
+    "@applitools/functional-commons" "^1.5.5"
+    "@applitools/monitoring-commons" "^1.0.19"
+    agentkeepalive "^4.1.0"
     debug "^4.1.1"
     lodash.merge "^4.6.2"
     node-fetch "^2.6.0"
 
-"@applitools/isomorphic-fetch@3.0.0", "@applitools/isomorphic-fetch@^3.0.0":
+"@applitools/isomorphic-fetch@3.0.0":
   version "3.0.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/isomorphic-fetch/-/isomorphic-fetch-3.0.0.tgz#3a3a838954b8b8bb89f1078e4f82b8c6bccaa884"
   integrity sha1-OjqDiVS4uLuJ8QeOT4K4xrzKqIQ=
@@ -153,43 +149,35 @@
     ws "^7.0.0"
     xml-name-validator "^3.0.0"
 
-"@applitools/monitoring-commons@^1.0.15":
+"@applitools/monitoring-commons@1.0.19", "@applitools/monitoring-commons@^1.0.19":
   version "1.0.19"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/monitoring-commons/-/monitoring-commons-1.0.19.tgz#9b6b1062b26b54e4d333bd2854ddb22e698c8f5a"
   integrity sha1-m2sQYrJrVOTTM70oVN2yLmmMj1o=
   dependencies:
     debug "^4.1.0"
 
-"@applitools/sdk-fake-eyes-server@^1.0.3":
-  version "1.1.3"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/sdk-fake-eyes-server/-/sdk-fake-eyes-server-1.1.3.tgz#02a72990728ed124b7581de1b6026508f94481f1"
-  integrity sha1-AqcpkHKO0SS3WB3htgJlCPlEgfE=
-  dependencies:
-    express "^4.17.1"
-    filenamify "^4.1.0"
-    node-fetch "^2.6.0"
-    ua-parser-js "^0.7.21"
-    uuid "^3.3.3"
+"@applitools/snippets@2.1.0":
+  version "2.1.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/snippets/-/snippets-2.1.0.tgz#edd143ec52ec19db19e94a5c3e0da8647e60eaf7"
+  integrity sha1-7dFD7FLsGdsZ6UpcPg2oZH5g6vc=
 
-"@applitools/visual-grid-client@^13.3.1":
-  version "13.8.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/visual-grid-client/-/visual-grid-client-13.8.1.tgz#5726d1c4c2b81d702a701d9a31bd770a4602d82b"
-  integrity sha1-VybRxMK4HXAqcB2aMb13CkYC2Cs=
+"@applitools/visual-grid-client@15.0.16":
+  version "15.0.16"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/visual-grid-client/-/visual-grid-client-15.0.16.tgz#67d532f9f857936972704c404b7abbddfb2c11e3"
+  integrity sha1-Z9Uy+fhXk2lycExAS3q73fssEeM=
   dependencies:
-    "@applitools/dom-snapshot" "3.5.2"
-    "@applitools/eyes-sdk-core" "10.1.2"
-    "@applitools/feature-flags" "2.1.1"
-    "@applitools/functional-commons" "1.5.4"
-    "@applitools/http-commons" "2.3.12"
+    "@applitools/eyes-sdk-core" "12.5.4"
+    "@applitools/functional-commons" "1.6.0"
+    "@applitools/http-commons" "2.4.3"
     "@applitools/isomorphic-fetch" "3.0.0"
     "@applitools/jsdom" "1.0.2"
     chalk "3.0.0"
     he "1.2.0"
-    lodash.mapvalues "^4.6.0"
-    mime-types "^2.1.24"
-    mkdirp "^0.5.1"
-    postcss-value-parser "^4.0.2"
-    throat "^5.0.0"
+    lodash.mapvalues "4.6.0"
+    mime-types "2.1.27"
+    mkdirp "0.5.5"
+    postcss-value-parser "4.1.0"
+    throat "5.0.0"
 
 "@babel/code-frame@7.0.0":
   version "7.0.0"
@@ -2783,10 +2771,10 @@ agent-base@^4.3.0:
   dependencies:
     es6-promisify "^5.0.0"
 
-agentkeepalive@^4.0.2:
-  version "4.1.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/agentkeepalive/-/agentkeepalive-4.1.2.tgz#d7bc3bafd7ea88032f6be22b6f1389b3d42c9c91"
-  integrity sha1-17w7r9fqiAMva+IrbxOJs9QsnJE=
+agentkeepalive@^4.1.0:
+  version "4.1.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/agentkeepalive/-/agentkeepalive-4.1.3.tgz#360a09d743a1f4fde749f9ba07caa6575d08259a"
+  integrity sha1-NgoJ10Oh9P3nSfm6B8qmV10IJZo=
   dependencies:
     debug "^4.1.0"
     depd "^1.1.2"
@@ -3237,7 +3225,7 @@ aws4@^1.2.1, aws4@^1.8.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/aws4/-/aws4-1.10.0.tgz#a17b3a8ea811060e74d47d306122400ad4497ae2"
   integrity sha1-oXs6jqgRBg501H0wYSJACtRJeuI=
 
-axios@0.19.2, axios@^0.19.0:
+axios@0.19.2:
   version "0.19.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
   integrity sha1-PqNsXYgY0NX4qKl6bTa4bNwAyyc=
@@ -5144,7 +5132,7 @@ cosmiconfig@5.2.1, cosmiconfig@^5.0.0, cosmiconfig@^5.0.2, cosmiconfig@^5.0.5, c
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-cosmiconfig@^6.0.0:
+cosmiconfig@6.0.0, cosmiconfig@^6.0.0:
   version "6.0.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/cosmiconfig/-/cosmiconfig-6.0.0.tgz#da4fee853c52f6b1e6935f41c1a2fc50bd4a9982"
   integrity sha1-2k/uhTxS9rHmk19BwaL8UL1KmYI=
@@ -5380,7 +5368,7 @@ css-tree@1.0.0-alpha.37:
     mdn-data "2.0.4"
     source-map "^0.6.1"
 
-css-tree@1.0.0-alpha.39, css-tree@^1.0.0-alpha.39:
+css-tree@1.0.0-alpha.39:
   version "1.0.0-alpha.39"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/css-tree/-/css-tree-1.0.0-alpha.39.tgz#2bff3ffe1bb3f776cf7eefd91ee5cba77a149eeb"
   integrity sha1-K/8//huz93bPfu/ZHuXLp3oUnus=
@@ -5551,7 +5539,7 @@ date-fns@^1.27.2:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha1-LnG/CxGRU9u0zE6I2epaz7UNwFw=
 
-dateformat@^3.0.3:
+dateformat@3.0.3:
   version "3.0.3"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha1-puN0maTZqc+F71hyBE1ikByYia4=
@@ -5581,6 +5569,13 @@ debug@3.1.0, debug@=3.1.0:
   integrity sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
   dependencies:
     ms "2.0.0"
+
+debug@4.2.0:
+  version "4.2.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/debug/-/debug-4.2.0.tgz#7f150f93920e94c58f5574c2fd01a3110effe7f1"
+  integrity sha1-fxUPk5IOlMWPVXTC/QGjEQ7/5/E=
+  dependencies:
+    ms "2.1.2"
 
 debug@^3.0.0, debug@^3.1.0, debug@^3.1.1, debug@^3.2.5:
   version "3.2.6"
@@ -5640,7 +5635,7 @@ deep-object-diff@^1.1.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha1-1vq/R2wu0XUfyU1cppPS7YwYvFo=
 
-deepmerge@^4.2.2:
+deepmerge@4.2.2:
   version "4.2.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha1-RNLqNnm49NT/ujPwPYZfwee/SVU=
@@ -5764,7 +5759,7 @@ detect-port-alt@1.1.6:
     address "^1.0.1"
     debug "^2.6.0"
 
-detect-port@1.3.0, detect-port@^1.2.3, detect-port@^1.3.0:
+detect-port@1.3.0, detect-port@^1.2.3:
   version "1.3.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/detect-port/-/detect-port-1.3.0.tgz#d9c40e9accadd4df5cac6a782aefd014d573d1f1"
   integrity sha1-2cQOmsyt1N9crGp4Ku/QFNVz0fE=
@@ -6214,11 +6209,6 @@ es6-iterator@~2.0.3:
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
 
-es6-promise-pool@2.5.0, es6-promise-pool@^2.5.0:
-  version "2.5.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/es6-promise-pool/-/es6-promise-pool-2.5.0.tgz#147c612b36b47f105027f9d2bf54a598a99d9ccb"
-  integrity sha1-FHxhKza0fxBQJ/nSv1SlmKmdnMs=
-
 es6-promise@^4.0.3:
   version "4.2.8"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
@@ -6505,8 +6495,10 @@ esrecurse@^4.1.0:
   version "4.2.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/esrecurse/-/esrecurse-4.2.1.tgz#007a3b9fdbc2b3bb87e4879ea19c92fdbd3942cf"
   integrity sha1-AHo7n9vCs7uH5IeeoZyS/b05Qs8=
+  dependencies:
+    estraverse "^4.1.0"
 
-estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
+estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.3.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/estraverse/-/estraverse-4.3.0.tgz#398ad3f3c5a24948be7725e83d11a7de28cdbd1d"
   integrity sha1-OYrT88WiSUi+dyXoPRGn3ijNvR0=
@@ -6725,7 +6717,7 @@ expect@^24.9.0:
     jest-message-util "^24.9.0"
     jest-regex-util "^24.9.0"
 
-express@4.17.1, express@^4.16.2, express@^4.16.3, express@^4.17.1:
+express@4.17.1, express@^4.16.2, express@^4.16.3:
   version "4.17.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha1-RJH8OGBc9R+GKdOcK10Cb5ikwTQ=
@@ -7029,20 +7021,6 @@ filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
   integrity sha1-wcS5vuPglyXdsQa3XB4wH+LxiyY=
-
-filename-reserved-regex@^2.0.0:
-  version "2.0.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/filename-reserved-regex/-/filename-reserved-regex-2.0.0.tgz#abf73dfab735d045440abfea2d91f389ebbfa229"
-  integrity sha1-q/c9+rc10EVECr/qLZHzieu/oik=
-
-filenamify@^4.1.0:
-  version "4.1.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/filenamify/-/filenamify-4.1.0.tgz#54d110810ae74eebfe115c1b995bd07e03cf2184"
-  integrity sha1-VNEQgQrnTuv+EVwbmVvQfgPPIYQ=
-  dependencies:
-    filename-reserved-regex "^2.0.0"
-    strip-outer "^1.0.1"
-    trim-repeated "^1.0.0"
 
 filesize@3.6.1, filesize@^3.6.1:
   version "3.6.1"
@@ -10149,7 +10127,7 @@ lodash.debounce@^4.0.8:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
-lodash.flatten@^4.4.0:
+lodash.flatten@4.4.0:
   version "4.4.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
   integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
@@ -10178,7 +10156,7 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash.mapvalues@^4.6.0:
+lodash.mapvalues@4.6.0:
   version "4.6.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz#1bafa5005de9dd6f4f26668c30ca37230cc9689c"
   integrity sha1-G6+lAF3p3W9PJmaMMMo3IwzJaJw=
@@ -10198,7 +10176,7 @@ lodash.mergewith@^4.6.1:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
   integrity sha1-YXEh+JrFX1kEfHrsHM1mVMZZD1U=
 
-lodash.pick@^4.4.0:
+lodash.pick@4.4.0, lodash.pick@^4.4.0:
   version "4.4.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
   integrity sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM=
@@ -10596,7 +10574,7 @@ mime-db@1.44.0, "mime-db@>= 1.43.0 < 2":
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/mime-db/-/mime-db-1.44.0.tgz#fa11c5eb0aca1334b4233cb4d52f10c5a6272f92"
   integrity sha1-+hHF6wrKEzS0Izy01S8QxaYnL5I=
 
-mime-types@^2.1.12, mime-types@^2.1.24, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24, mime-types@~2.1.7:
+mime-types@2.1.27, mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24, mime-types@~2.1.7:
   version "2.1.27"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/mime-types/-/mime-types-2.1.27.tgz#47949f98e279ea53119f5722e0f34e529bec009f"
   integrity sha1-R5SfmOJ56lMRn1ci4PNOUpvsAJ8=
@@ -10798,7 +10776,7 @@ ms@2.1.1:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha1-MKWGTrPrsKZvLr5tcnrwagnYbgo=
 
-ms@^2.0.0, ms@^2.1.1:
+ms@2.1.2, ms@^2.0.0, ms@^2.1.1:
   version "2.1.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
@@ -11356,7 +11334,7 @@ optionator@^0.8.1, optionator@^0.8.2:
     type-check "~0.3.2"
     word-wrap "~1.2.3"
 
-ora@^3.4.0:
+ora@3.4.0:
   version "3.4.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ora/-/ora-3.4.0.tgz#bf0752491059a3ef3ed4c85097531de9fdbcd318"
   integrity sha1-vwdSSRBZo+8+1MhQl1Md6f280xg=
@@ -11509,7 +11487,7 @@ p-try@^2.0.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha1-yyhoVA4xPWHeWPr741zpAE1VQOY=
 
-pako@~1.0.5:
+pako@1.0.11, pako@~1.0.5:
   version "1.0.11"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/pako/-/pako-1.0.11.tgz#6c9599d340d54dfd3946380252a35705a6b992bf"
   integrity sha1-bJWZ00DVTf05RjgCUqNXBaa5kr8=
@@ -11875,7 +11853,7 @@ pn@^1.1.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha1-4vTO8OIZ9GPBeas3Rj5OHs3Muvs=
 
-png-async@^0.9.4:
+png-async@0.9.4:
   version "0.9.4"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/png-async/-/png-async-0.9.4.tgz#0638817508fcf4e732706b2f82c74c947cb83f78"
   integrity sha1-BjiBdQj89OcycGsvgsdMlHy4P3g=
@@ -12320,15 +12298,15 @@ postcss-unique-selectors@^4.0.1:
     postcss "^7.0.0"
     uniqs "^2.0.0"
 
+postcss-value-parser@4.1.0, postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
+  version "4.1.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
+  integrity sha1-RD9qIM7WSBor2k+oUypuVdeJoss=
+
 postcss-value-parser@^3.0.0, postcss-value-parser@^3.3.0, postcss-value-parser@^3.3.1:
   version "3.3.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
   integrity sha1-n/giVH4okyE88cMO+lGsX9G6goE=
-
-postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
-  version "4.1.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
-  integrity sha1-RD9qIM7WSBor2k+oUypuVdeJoss=
 
 postcss@^6.0.1, postcss@^6.0.2, postcss@^6.0.23:
   version "6.0.23"
@@ -12598,7 +12576,7 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
 
-puppeteer@^1.20.0:
+puppeteer@1.20.0:
   version "1.20.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/puppeteer/-/puppeteer-1.20.0.tgz#e3d267786f74e1d87cf2d15acc59177f471bbe38"
   integrity sha1-49JneG904dh88tFazFkXf0cbvjg=
@@ -14204,7 +14182,7 @@ stable@^0.1.8:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha1-g26zyDgv4pNv6vVEYxAXzn1Ho88=
 
-stack-trace@^0.0.10, stack-trace@~0.0.7:
+stack-trace@0.0.10, stack-trace@~0.0.7:
   version "0.0.10"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
@@ -14498,13 +14476,6 @@ strip-json-comments@^2.0.0, strip-json-comments@^2.0.1:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-strip-outer@^1.0.1:
-  version "1.0.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/strip-outer/-/strip-outer-1.0.1.tgz#b2fd2abf6604b9d1e6013057195df836b8a9d631"
-  integrity sha1-sv0qv2YEudHmATBXGV34Nrip1jE=
-  dependencies:
-    escape-string-regexp "^1.0.2"
-
 style-loader@^0.23.1:
   version "0.23.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/style-loader/-/style-loader-0.23.1.tgz#cb9154606f3e771ab6c4ab637026a1049174d925"
@@ -14755,15 +14726,15 @@ thread-loader@2.1.3:
     loader-utils "^1.1.0"
     neo-async "^2.6.0"
 
+throat@5.0.0:
+  version "5.0.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
+  integrity sha1-xRmSNYA6rRh1SmZ9ZZtecs4Wdks=
+
 throat@^4.0.0:
   version "4.1.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
   integrity sha1-iQN8vJLFarGJJua6TLsgDhVnKmo=
-
-throat@^5.0.0:
-  version "5.0.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
-  integrity sha1-xRmSNYA6rRh1SmZ9ZZtecs4Wdks=
 
 through2@^2.0.0:
   version "2.0.5"
@@ -14928,13 +14899,6 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
-
-trim-repeated@^1.0.0:
-  version "1.0.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/trim-repeated/-/trim-repeated-1.0.0.tgz#e3646a2ea4e891312bf7eace6cfb05380bc01c21"
-  integrity sha1-42RqLqTokTEr9+rObPsFOAvAHCE=
-  dependencies:
-    escape-string-regexp "^1.0.2"
 
 trim-right@^1.0.1:
   version "1.0.1"
@@ -15209,7 +15173,7 @@ typescript@^3.2.4:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/typescript/-/typescript-3.9.5.tgz#586f0dba300cde8be52dd1ac4f7e1009c1b13f36"
   integrity sha1-WG8NujAM3ovlLdGsT34QCcGxPzY=
 
-ua-parser-js@^0.7.18, ua-parser-js@^0.7.21:
+ua-parser-js@^0.7.18:
   version "0.7.21"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
   integrity sha1-hTz5zpP2QvZxdCc8w0Vlrm8wh3c=
@@ -15445,7 +15409,7 @@ uuid@^2.0.1:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
   integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
 
-uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0, uuid@^3.3.2, uuid@^3.3.3, uuid@^3.4.0:
+uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0, uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
@@ -16151,7 +16115,7 @@ yargs@12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^10.1.0"
 
-yargs@^12.0.5:
+yargs@12.0.5:
   version "12.0.5"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/yargs/-/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
   integrity sha1-BfWZe2CWR7ZPZrgeO0sQo2jnrRM=
