@@ -1,5 +1,5 @@
 import React from 'react';
-import { visualize, story, snap } from '../src';
+import { visualize, story, snap, xsnap } from '../src';
 
 interface ExampleComponentProps {
   onDone?(): void;
@@ -71,8 +71,15 @@ class ExampleComponent extends React.Component<
     const { isReady, counter } = this.state;
 
     return (
-      <div style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-        <h3>Story is {isReady ? 'Ready' : 'Waiting'}</h3>
+      <div
+        style={{
+          fontFamily: 'Helvetica, Arial, sans-serif',
+          display: 'inline-block',
+        }}
+      >
+        <h3 style={{ display: 'inline-block' }}>
+          Story is {isReady ? 'Ready' : 'Waiting'}
+        </h3>
         <div style={this._getStyle()}>{isReady ? '👍' : '👎'}</div>
         {!isReady ? <p>Ready in {5 - counter}s</p> : null}
       </div>
@@ -83,8 +90,18 @@ class ExampleComponent extends React.Component<
 visualize('storybook-snapper', () => {
   story('Basic', () => {
     snap('sync example', () => <ExampleComponent />);
-    snap('async example', done => <ExampleComponent onDone={done} />);
+    snap('async example', (done) => <ExampleComponent onDone={done} />);
   });
 
   snap('sync example - without story', () => <ExampleComponent />);
+
+  story('debug', () => {
+    snap.debug('sync example', <ExampleComponent />);
+    snap.debug('async example', (done) => <ExampleComponent onDone={done} />);
+  });
+
+  story('skip', () => {
+    xsnap('xsnap', () => <ExampleComponent />);
+    snap.skip('snap.skip', () => <ExampleComponent />);
+  });
 });
