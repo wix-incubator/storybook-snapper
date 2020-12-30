@@ -67,7 +67,10 @@ export class VisualTest extends React.Component<
   render() {
     const { isReady } = this.state;
     const { debug } = this.props;
-    const style = isReady && debug ? { outline: '1px solid red', display: 'inline-block' } : {};
+    const style =
+      isReady && debug
+        ? { outline: '1px solid red', display: 'inline-block' }
+        : {};
     return (
       <div {...this._getDataAttrs()} style={style}>
         {this._getContent()}

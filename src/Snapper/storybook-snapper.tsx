@@ -52,9 +52,16 @@ export function story(storyName, cb) {
 }
 
 function runSnap(props: SnapProps) {
-  const { snapshotName, cb, skip = false, debug = false } = props;
+  const {
+    snapshotName,
+    cb,
+    skip = false,
+    debug = false,
+    eyesConfig = {},
+  } = props;
   const eyesStorybookOptions: EyesStorybookOptions = {
     waitBeforeScreenshot: `[${DATA_READY_HOOK}="true"]`,
+    ...eyesConfig,
   };
   const fullStoryName = [...currentTest].join('/');
 
@@ -83,8 +90,8 @@ function runSnap(props: SnapProps) {
 }
 
 function createSnapMethod({ debug = false, skip = false }) {
-  return (snapshotName: string, cb: ChildrenProp) => {
-    runSnap({ snapshotName, cb, debug, skip });
+  return (snapshotName: string, cb: ChildrenProp, eyesConfig: any) => {
+    runSnap({ snapshotName, cb, debug, skip, eyesConfig });
   };
 }
 

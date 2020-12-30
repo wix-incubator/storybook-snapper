@@ -90,18 +90,26 @@ class ExampleComponent extends React.Component<
 visualize('storybook-snapper', () => {
   story('Basic', () => {
     snap('sync example', () => <ExampleComponent />);
-    snap('async example', (done) => <ExampleComponent onDone={done} />);
+    snap('async example', done => <ExampleComponent onDone={done} />);
   });
 
   snap('sync example - without story', () => <ExampleComponent />);
 
   story('debug', () => {
     snap.debug('sync example', <ExampleComponent />);
-    snap.debug('async example', (done) => <ExampleComponent onDone={done} />);
+    snap.debug('async example', done => <ExampleComponent onDone={done} />);
   });
 
   story('skip', () => {
     xsnap('xsnap', () => <ExampleComponent />);
     snap.skip('snap.skip', () => <ExampleComponent />);
+  });
+
+  story('eyes configuration', () => {
+    snap('runBefore', <ExampleComponent />, {
+      runBefore: ({ rootEl }: { rootEl: HTMLElement }) => {
+        rootEl.setAttribute('style', 'border: 1px solid coral');
+      },
+    });
   });
 });
