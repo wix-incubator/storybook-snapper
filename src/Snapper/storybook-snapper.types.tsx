@@ -15,4 +15,5 @@ export interface SnapProps {
   cb: ChildrenProp;
   skip?: boolean;
   debug?: boolean;
+  eyesConfig?: EyesStorybookOptions & any;
 }
