@@ -15,33 +15,52 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-shared/-/dom-shared-1.0.4.tgz#1a59116f3f29fb140ac031949547531348c9d972"
   integrity sha1-GlkRbz8p+xQKwDGUlUdTE0jJ2XI=
 
-"@applitools/dom-snapshot@4.2.3":
-  version "4.2.3"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-4.2.3.tgz#3cfb77fe073d851673f65da2402e21562f03381e"
-  integrity sha1-PPt3/gc9hRZz9l2iQC4hVi8DOB4=
+"@applitools/dom-snapshot@4.2.5":
+  version "4.2.5"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-4.2.5.tgz#f568b5233d684e4a4d7fe3ea076ea1d4c3c2d776"
+  integrity sha1-9Wi1Iz1oTkpNf+PqB26h1MPC13Y=
   dependencies:
     "@applitools/dom-shared" "1.0.4"
     "@applitools/functional-commons" "1.6.0"
     css-tree "1.0.0-alpha.39"
     pako "1.0.11"
 
-"@applitools/dom-snapshot@4.2.4":
-  version "4.2.4"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-4.2.4.tgz#3054e08c2774ac924592d2f66569ec6bee08f91f"
-  integrity sha1-MFTgjCd0rJJFktL2ZWnsa+4I+R8=
+"@applitools/dom-snapshot@4.2.6":
+  version "4.2.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/dom-snapshot/-/dom-snapshot-4.2.6.tgz#1101168ad450c0b7ca17a835bc7969a85f079827"
+  integrity sha1-EQEWitRQwLfKF6g1vHlpqF8HmCc=
   dependencies:
     "@applitools/dom-shared" "1.0.4"
     "@applitools/functional-commons" "1.6.0"
     css-tree "1.0.0-alpha.39"
     pako "1.0.11"
 
-"@applitools/eyes-sdk-core@12.5.4":
-  version "12.5.4"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-12.5.4.tgz#3bd164fe56c4443ebedf825cd0bbee4fd819fa43"
-  integrity sha1-O9Fk/lbERD6+34Jc0LvuT9gZ+kM=
+"@applitools/eyes-sdk-core@12.5.5":
+  version "12.5.5"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-12.5.5.tgz#e0b2a67949eb1191efeace27128b60b073b3caa0"
+  integrity sha1-4LKmeUnrEZHv6s4nEotgsHOzyqA=
   dependencies:
     "@applitools/dom-capture" "8.0.1"
-    "@applitools/dom-snapshot" "4.2.3"
+    "@applitools/dom-snapshot" "4.2.5"
+    "@applitools/isomorphic-fetch" "3.0.0"
+    "@applitools/snippets" "2.1.0"
+    axios "0.19.2"
+    chalk "3.0.0"
+    cosmiconfig "6.0.0"
+    dateformat "3.0.3"
+    debug "4.2.0"
+    deepmerge "4.2.2"
+    png-async "0.9.4"
+    stack-trace "0.0.10"
+    tunnel "0.0.6"
+
+"@applitools/eyes-sdk-core@12.5.7":
+  version "12.5.7"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-sdk-core/-/eyes-sdk-core-12.5.7.tgz#59bb1f8d018b33e8760427dbcd93c3aa7ef16379"
+  integrity sha1-WbsfjQGLM+h2BCfbzZPDqn7xY3k=
+  dependencies:
+    "@applitools/dom-capture" "8.0.1"
+    "@applitools/dom-snapshot" "4.2.5"
     "@applitools/isomorphic-fetch" "3.0.0"
     "@applitools/snippets" "2.1.0"
     axios "0.19.2"
@@ -142,12 +161,12 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/snippets/-/snippets-2.1.0.tgz#edd143ec52ec19db19e94a5c3e0da8647e60eaf7"
   integrity sha1-7dFD7FLsGdsZ6UpcPg2oZH5g6vc=
 
-"@applitools/visual-grid-client@15.0.16":
-  version "15.0.16"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/visual-grid-client/-/visual-grid-client-15.0.16.tgz#67d532f9f857936972704c404b7abbddfb2c11e3"
-  integrity sha1-Z9Uy+fhXk2lycExAS3q73fssEeM=
+"@applitools/visual-grid-client@15.1.1":
+  version "15.1.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/visual-grid-client/-/visual-grid-client-15.1.1.tgz#483bfe2c70ce683f349b5cf718f88d75626c9724"
+  integrity sha1-SDv+LHDOaD80m1z3GPiNdWJslyQ=
   dependencies:
-    "@applitools/eyes-sdk-core" "12.5.4"
+    "@applitools/eyes-sdk-core" "12.5.7"
     "@applitools/functional-commons" "1.6.0"
     "@applitools/http-commons" "2.4.3"
     "@applitools/isomorphic-fetch" "3.0.0"
