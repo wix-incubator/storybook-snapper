@@ -97,7 +97,7 @@ visualize('storybook-snapper', () => {
 
   story('debug', () => {
     snap.debug('sync example', <ExampleComponent />);
-    snap.skip('async example', done => <ExampleComponent onDone={done} />);
+    // snap.debug('async example', done => <ExampleComponent onDone={done} />);
   });
 
   story('skip', () => {
