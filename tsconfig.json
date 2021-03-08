@@ -16,7 +16,7 @@
     "./__tests__/**/*.ts",
     "./src/**/*.tsx",
     "./src/external-types.d.ts",
-    "./node_modules/yoshi/types.d.ts"
+    "./node_modules/@wix/yoshi/types.d.ts"
   ],
   "files": [
     "./src/index.ts"
