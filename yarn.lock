@@ -101,10 +101,10 @@
     stack-trace "0.0.10"
     tunnel "0.0.6"
 
-"@applitools/eyes-storybook@3.20.1":
-  version "3.20.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-storybook/-/eyes-storybook-3.20.1.tgz#4fe287fcf2efa245387873f26662dc6a33dca3f9"
-  integrity sha1-T+KH/PLvokU4eHPyZmLcajPco/k=
+"@applitools/eyes-storybook@^3.20.1":
+  version "3.20.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@applitools/eyes-storybook/-/eyes-storybook-3.20.2.tgz#e15d2f2a208e5f582ba7a9a61c645392f186abfe"
+  integrity sha1-4V0vKiCOX1grp6mmHGRTkvGGq/4=
   dependencies:
     "@applitools/dom-snapshot" "4.4.14"
     "@applitools/eyes-puppeteer" "1.4.3"
