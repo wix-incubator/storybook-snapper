@@ -43,7 +43,7 @@
     "react": "^16.9.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.2.4",
-    "yoshi": "^4.0.0"
+    "@wix/yoshi": "^4.0.0"
   },
   "dependencies": {
     "lodash": "^4.17.15"
