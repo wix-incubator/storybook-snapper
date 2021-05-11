@@ -46,13 +46,18 @@ function getServerUrl() {
 }
 
 module.exports = ({config, features = {}}) => {
-  const sharedConfig = {
+  const baseConfig = {
     apiKey: process.env.EYES_API_KEY,
     batchId: getBatchId(),
     batchName: process.env.npm_package_name,
     exitcode: true,
   }
 
+  const featuresConfig = {};
+
+  /** The Applitools Github Intgeration App has some difficulities in reading the git branch name from the CI.
+   * In such cases, the following feature will read it manually and set the branchName for the Applitools SDK.
+   */
   if(features.githubIntegration) {
     const {
       orgName,
@@ -60,7 +65,10 @@ module.exports = ({config, features = {}}) => {
       branchName
     } = getGitData()
 
-    merge(sharedConfig, {branchName: [orgName, projectName, branchName].join('/')})
+    //PR CI will not have an issue, so handle it only when in master
+    if(branchName === 'master') {
+      featuresConfig.branchName = [orgName, projectName, branchName].join('/')
+    }
   }
-  return merge(sharedConfig, getServerUrl(), config);
+  return merge(baseConfig, getServerUrl(), config);
 };
