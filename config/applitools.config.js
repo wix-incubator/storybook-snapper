@@ -46,6 +46,7 @@ function getServerUrl() {
 }
 
 module.exports = ({config, features}) => {
+  console.log('ahhh')
   const sharedConfig = {
     apiKey: process.env.EYES_API_KEY,
     batchId: getBatchId(),
@@ -60,7 +61,7 @@ module.exports = ({config, features}) => {
       branchName
     } = getGitData()
 
-    merge(sharedConfig, {branchName: [orgName, projectName, branchName].join('/')}
+    merge(sharedConfig, {branchName: [orgName, projectName, branchName].join('/')})
   }
 
   return merge(sharedConfig, getServerUrl(), config);
