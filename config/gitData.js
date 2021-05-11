@@ -5,7 +5,6 @@ function getGitData () {
   const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().replace('\n', '');
 
   const [orgName, projectNameWithSuffix] = orgNameAndProjectName.split('/');
-  console.log(projectNameWithSuffix)
   const [projectName] = projectNameWithSuffix.split('.git');
 
   return {

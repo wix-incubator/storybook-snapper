@@ -62,7 +62,5 @@ module.exports = ({config, features = {}}) => {
 
     merge(sharedConfig, {branchName: [orgName, projectName, branchName].join('/')})
   }
-
   return merge(sharedConfig, getServerUrl(), config);
-
 };
