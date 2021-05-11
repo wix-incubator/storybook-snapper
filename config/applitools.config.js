@@ -1,5 +1,6 @@
 const { execSync } = require('child_process');
 const merge = require('lodash/merge');
+const { getGitData } = require('./gitData');
 
 const PULL_REQUEST_PARENT_HASH_INDEX = 2;
 const HEAD_HASH_INDEX = 0;
@@ -44,9 +45,23 @@ function getServerUrl() {
   return serverUrlConfig;
 }
 
-module.exports = ({config}) => merge({
-  apiKey: process.env.EYES_API_KEY,
-  batchId: getBatchId(),
-  batchName: process.env.npm_package_name,
-  exitcode: true,
-}, getServerUrl(), config);
+module.exports = ({config, features}) => {
+  const sharedConfig = {
+    apiKey: process.env.EYES_API_KEY,
+    batchId: getBatchId(),
+    batchName: process.env.npm_package_name,
+    exitcode: true,
+  }
+
+  if(features.githubIntegration) {
+    const {
+      orgName
+      projectName,
+      branchName
+    } = getGitData()
+
+    merge(sharedConfig, {branchName: [orgName, projectName, branchName].join('/')}
+  }
+
+  return merge(sharedConfig, getServerUrl(), config);
+};
