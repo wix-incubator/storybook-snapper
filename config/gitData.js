@@ -1,10 +1,11 @@
 const { execSync } = require('child_process');
 
-function getGitData = () => {
+function getGitData () {
   const [, orgNameAndProjectName] = execSync('git config --get remote.origin.url').toString().split(':');
-  const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString();
+  const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().replace('\n', '');
 
   const [orgName, projectNameWithSuffix] = orgNameAndProjectName.split('/');
+  console.log(projectNameWithSuffix)
   const [projectName] = projectNameWithSuffix.split('.git');
 
   return {
